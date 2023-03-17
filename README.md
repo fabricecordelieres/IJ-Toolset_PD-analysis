@@ -22,7 +22,14 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 - _**User defined output folder**_: 
 	- _**Sub-folder named after the image's title**_: 
 		- **composite:**
-			- Dilated_Composite.tif:
+			- Dilated_Composite.tif: A composite image made of 7 channels (each channel can be identified from the image's status bar):
+				- Channel 1: Ori_Walls, the original image of walls, in gray LUT
+				- Channel 2: Ori_PDs, the original image of PDs, in purple LUT
+				- Channel 3: Skeleton, once cells have been isolated, the outer space is processed and subjected to skeletonization. This version of the output provides a dilated version of the skeleton to ease visualization. The image is displayed with the gray LUT.
+				- Channel 4: Tagged_junction_points, from the skeleton image; the tri-point are isolated and tagged (one ID per junction point). This version of the output is dilated version to ease visualization. The image is displayed with the glasbey on dark LUT.
+				- Channel 5: Tagged_walls, from the skeleton image; the tri-point are isolated, dilated and subtracted to the skeleton. The remaining fragments are individualized and tagged (one ID per wall). This version of the output is dilated version to ease visualization. The image is displayed with the glasbey on dark LUT.
+				- Channel 6: Tagged_PDs, from the original image of PDs, each structure is individualized and tagged (one ID per PD). This version of the output is dilated version to ease visualization. The image is displayed with the glasbey on dark LUT.
+				- Channel 7: Tagged_Cells, this is the inverted image from the dilated skeleton, where each cell is incividualized and tagged (one ID per cell). The image is displayed with the glasbey on dark LUT.
 			- Raw_Composite.tif:
 		- **CSV:**
 			- Cells.csv:
