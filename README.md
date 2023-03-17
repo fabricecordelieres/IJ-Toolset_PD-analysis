@@ -4,13 +4,12 @@
 
 
 ## What was the user's request ?
-blablabla
-The aim of this workflow is:
-- For the toolset:
-    1.
+The user has confocal stacks presenting in one channel a labelling of cell walls, on the other channel a calose staining. The aim of automation is to get a delineationg of cells, walls and calose positive puncta:
+- Each cell should be tagged with an ID and basic morphometric informations should be extracted.
+- Each wall should be tagged with an ID and basic morphometric informations should be extracted. Each wall should be associated with the IDs of its two bording cells to relate both structures. As a strating point, walls are considered to be segments running between two tri-points (see below).
+- Each puncta should be tagged with an ID and basic morphometric informations should be extracted. Each punta should be associated with the ID of the wall it's sitting on.
 
-- For the Colab script:
-    1. 
+The toolset allows segmenting all elements, extracting relational and basic morphometrical informations. The Colab script is a a basic tool to shape and visualize the extracted data.
 
 ## How does it work ?
 
