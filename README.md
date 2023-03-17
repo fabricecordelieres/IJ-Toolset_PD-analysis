@@ -12,15 +12,30 @@ The user has confocal stacks presenting in one channel a labelling of cell walls
 The toolset allows segmenting all elements, extracting relational and basic morphometrical informations. The Colab script is a a basic tool to shape and visualize the extracted data.
 
 ## How does it work ?
-
-
 ### IJ Toolset
-	
-
 #### Data structure for output
-The toolset will output many data. In order to keep everything sorted, a specific folder/subfolders structure is adopted. The datastructure is generated as the user is activating the different tools. For each of the following folders, a subfolder is created per lif file and contains one file per sequence. This data structure is hosted in a user-defined root folder.
+The toolset will output many data. In order to keep everything sorted, a specific folder/subfolders structure is adopted. The datastructure is generated as the user is activating the different tools. For each of the following folders, a subfolder is created per input file. This data structure is hosted in a user-defined root folder.
 	
-- _**XXX**_: 
+- _**User defined output folder**_: 
+	- _**Sub-folder named after the image's title**_: 
+		- **composite:**
+			- Dilated_Composite.tif:
+			- Raw_Composite.tif:
+		- **CSV:**
+			- Cells.csv:
+			- Junction_points.csv:
+			- Walls_Modeling.csv:
+			- Walls.csv:
+		- **JSON:**
+			- data.json:
+		- **png:**
+			- Ori_PDs.png:
+			- Ori_Walls.png:
+			- Skeleton.png:
+			- Tagged_Cells.png:
+			- Tagged_junction_points.png:
+			- Tagged_PDs.png:
+			- Tagged_Walls.png:
 
 #### Tool 1: 
 	
