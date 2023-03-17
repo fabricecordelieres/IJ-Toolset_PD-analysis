@@ -4,6 +4,9 @@
 
 
 ## What was the user's request ?
+<p align=center>
+	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Montage.jpg?raw=true">
+</p>
 The user has confocal stacks presenting in one channel a labelling of cell walls, on the other channel a calose staining. The aim of automation is to get a delineationg of cells, walls and calose positive puncta:
 - Each cell should be tagged with an ID and basic morphometric informations should be extracted.
 - Each wall should be tagged with an ID and basic morphometric informations should be extracted. Each wall should be associated with the IDs of its two bording cells to relate both structures. As a strating point, walls are considered to be segments running between two tri-points (see below).
