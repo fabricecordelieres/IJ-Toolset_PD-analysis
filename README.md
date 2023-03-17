@@ -32,7 +32,8 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 				- Channel 7: Tagged_Cells, this is the inverted image from the dilated skeleton, where each cell is incividualized and tagged (one ID per cell). The image is displayed with the glasbey on dark LUT.
 				- Raw_Composite.tif:
 <p align=center>
-	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite.jpg?raw=true">
+	<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_1.jpg?raw=true"></p>
+	<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_2.jpg?raw=true"></p>
 	<p align=center><b><em>Example of the different channels within the Dilated_Composite output</em></b></p>
 </p>
 			
