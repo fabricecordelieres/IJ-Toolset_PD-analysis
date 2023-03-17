@@ -5,7 +5,7 @@
 
 ## What was the user's request ?
 <p align=center>
-	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Montage.jpg?raw=true">
+	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Montage.jpg?raw=true" width="512">
 </p>
 The user has confocal stacks presenting in one channel a labelling of cell walls, on the other channel a calose staining. The aim of automation is to get a delineationg of cells, walls and calose positive puncta:
 - Each cell should be tagged with an ID and basic morphometric informations should be extracted.
