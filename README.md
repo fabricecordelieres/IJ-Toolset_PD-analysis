@@ -38,10 +38,54 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 </p>
 			
 		- **CSV:**
-			- Cells.csv:
-			- Junction_points.csv:
-			- Walls_Modeling.csv:
-			- Walls.csv:
+			- Cells.csv: a csv file containing the following information, for each element:
+				- ID: element's ID.
+				- X_pix: X coordinates of the element's outlines.
+				- Y_pix: Y coordinates of the element's outlines.
+				- XCenter_pix: X coordinate of the element's geometrical centre.
+				- YCenter_pix: Y coordinate of the element's geometrical centre.
+				- Area_unit2: area of the element, expressed in the calibration unit of the image.
+				- Mean_Intensity: average intensity over the element.
+				- Total_Intensity: summed intensity over the element.
+			- Junction_points.csv: a csv file containing the following information, for each element:
+				- ID: element's ID.
+				- X_pix: X coordinates of the element's outlines (single point).
+				- Y_pix: Y coordinates of the element's outlines (single point).
+				- XCenter_pix: X coordinate of the element's geometrical centre.
+				- YCenter_pix: Y coordinate of the element's geometrical centre.
+				- Area_unit2: area of the element, expressed in the calibration unit of the image.
+				- Mean_Intensity: average intensity over the element (same as Total_Intensity).
+				- Total_Intensity: summed intensity over the element (same as Mean_Intensity).
+				- ID_Parent_Wall_1: ID of the first parent wall or 0.
+				- ID_Parent_Wall_2: ID of the second parent wall or 0.
+				- ID_Parent_Wall_3: ID of the third parent wall or 0.
+			- PDs.csv: a csv file containing the following information, for each element:
+				- ID: element's ID.
+				- X_pix: X coordinates of the element's outlines (single point).
+				- Y_pix: Y coordinates of the element's outlines (single point).
+				- XCenter_pix: X coordinate of the element's geometrical centre.
+				- YCenter_pix: Y coordinate of the element's geometrical centre.
+				- Area_unit2: area of the element, expressed in the calibration unit of the image.
+				- Mean_Intensity: average intensity over the element (depends how large the expansion parameter has been chosen to integrate signal).
+				- Total_Intensity: summed intensity over the element (depends how large the expansion parameter has been chosen to integrate signal).
+				- ID_Parent_Wall: ID of first parent wall or 0.
+			- Walls.csv: a csv file containing the following information, for each element:
+				- ID: element's ID.
+				- X_pix: X coordinates of the element's outlines.
+				- Y_pix: Y coordinates of the element's outlines.
+				- XCenter_pix: X coordinate of the element's geometrical centre.
+				- YCenter_pix: Y coordinate of the element's geometrical centre.
+				- Area_unit2: area of the element, expressed in the calibration unit of the image.
+				- Mean_Intensity: average intensity over the element (same as Total_Intensity).
+				- Total_Intensity: summed intensity over the element (same as Mean_Intensity).
+				- Length_unit: length of the element, expressed in the calibration unit of the image (basically the area halfed as the outline is countouring the one pixel thick structure).
+				- ID_Parent_Cell_1: ID of the first parent cell or 0.
+				- ID_Parent_Cell_2: ID of the second parent cell or 0.
+			- Walls_Modeling.csv: a csv file containing the following information, for each element:
+				- Total_Intensity: summed intensity over the element (same as Mean_Intensity).
+				- Length_unit: length of the element, expressed in the calibration unit of the image (basically the area halfed as the outline is countouring the one pixel thick structure).
+				- ID_Parent_Cell_1: ID of the first parent cell or 0.
+				- ID_Parent_Cell_2: ID of the second parent cell or 0.
 		- **JSON:**
 			- data.json:
 		- **png:**
