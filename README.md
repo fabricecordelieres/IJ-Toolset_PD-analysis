@@ -31,12 +31,11 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 				- Channel 6: Tagged_PDs, from the original image of PDs, each structure is individualized and tagged (one ID per PD). This version of the output is dilated version to ease visualization. The image is displayed with the glasbey on dark LUT.
 				- Channel 7: Tagged_Cells, this is the inverted image from the dilated skeleton, where each cell is incividualized and tagged (one ID per cell). The image is displayed with the glasbey on dark LUT.
 				- Raw_Composite.tif:
-<p align=center>
-	<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_1.jpg?raw=true" width= "1024"></p>
-	<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_2.jpg?raw=true" width=" 768"></p>
-	<p align=center><b><em>Example of the different channels within the Dilated_Composite output</em></b></p>
-</p>
-			
+				<p align=center>
+					<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_1.jpg?raw=true" width= "1024"></p>
+					<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_2.jpg?raw=true" width=" 768"></p>
+					<p align=center><b><em>Example of the different channels within the Dilated_Composite output</em></b></p>
+				</p>
 		- **CSV:**
 			- Cells.csv: a csv file containing the following information, for each element:
 				- ID: element's ID.
