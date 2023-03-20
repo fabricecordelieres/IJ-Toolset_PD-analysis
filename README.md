@@ -102,12 +102,13 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 			- Tagged_PDs.png
 			- Tagged_Walls.png
 
-#### Tool 1: 
+#### Tool 1: CZI to Zip Tool
 	
-#### Tool 2: 
+#### Tool 2: Single file Tool
 
+#### Tool 3: Multiple file Tool
 
-#### Tool 3: 
+#### Tool 4: ZipIt & View
 	
 ### Colab script
 The Colab script will take care of YYY.
