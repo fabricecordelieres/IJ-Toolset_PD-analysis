@@ -30,7 +30,7 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 				- Channel 5: Tagged_walls, from the skeleton image; the tri-point are isolated, dilated and subtracted to the skeleton. The remaining fragments are individualized and tagged (one ID per wall). This version of the output is dilated version to ease visualization. The image is displayed with the glasbey on dark LUT.
 				- Channel 6: Tagged_PDs, from the original image of PDs, each structure is individualized and tagged (one ID per PD). This version of the output is dilated version to ease visualization. The image is displayed with the glasbey on dark LUT.
 				- Channel 7: Tagged_Cells, this is the inverted image from the dilated skeleton, where each cell is incividualized and tagged (one ID per cell). The image is displayed with the glasbey on dark LUT.
-				- Raw_Composite.tif:
+			- Raw_Composite.tif: same composition of channels as above, without the dilation step.
 				<p align=center>
 					<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_1.jpg?raw=true" width= "1024"></p>
 					<p align=center><img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Dilated_composite_2.jpg?raw=true" width=" 768"></p>
@@ -86,15 +86,21 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 				- ID_Parent_Cell_1: ID of the first parent cell or 0.
 				- ID_Parent_Cell_2: ID of the second parent cell or 0.
 		- **JSON:**
-			- data.json:
-		- **png:**
-			- Ori_PDs.png:
-			- Ori_Walls.png:
-			- Skeleton.png:
-			- Tagged_Cells.png:
-			- Tagged_junction_points.png:
-			- Tagged_PDs.png:
-			- Tagged_Walls.png:
+			- data.json: contains all the data (same as in the csv files+analysis parameters and image metadata), as dictionnary entries including sub-directories (one per element), one per group of data:
+				- analysis parameters
+				- image metadata
+				- cells
+				- walls
+				- junction points
+				- PDs
+		- **png:** Same inmages as in the "composite" folder, asved as individual png files.
+			- Ori_PDs.png
+			- Ori_Walls.png
+			- Skeleton.png
+			- Tagged_Cells.png
+			- Tagged_junction_points.png
+			- Tagged_PDs.png
+			- Tagged_Walls.png
 
 #### Tool 1: 
 	
