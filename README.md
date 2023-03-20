@@ -106,7 +106,18 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 <p align=center>
 	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool1.jpg?raw=true" width="256">
 </p>
+_This tool is aimed at easing the analysis by performing automated projection of all CZI files within the provided input folder._
 
+<p align=center>
+	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/GUI_CZI_to_Zip.png?raw=true" width="512">
+	<p align=center><b><em>Graphical user interface: CZI to Zip</em></b></p>
+</p>
+
+1. Set the following parameters:
+	- _Where are the files ?_: Either dragging and dropping the folder or using the Browse button, point at the folder where the CZI files are stored.
+	- _Where to save projections ?_: Either dragging and dropping the folder or using the Browse button, point at the folder where projections should be saved.
+	- _Projections type_: Select the projection type amongst the following options: Average Intensity, Max Intensity, Min Intensity, Sum Slices, Standard Deviation or Median.
+2. Press Ok. NB: in order to speed up the process, none of the files will be displayed.
 	
 #### Tool 2: Single file Tool
 <p align=center>
@@ -136,7 +147,7 @@ The Colab script will take care of YYY.
 
 The [release page](https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/releases/tag/v1.0) displays a download link for PD-analysis_Workflow.zip file. Once unzipped, it contains everything that needs to be installed.
 
-*The toolset mostly relies on functions and plugins that are already embarqued within Fiji. Tool 3, however, requires a separate plugin that should be installed before using the toolset:*
+*The toolset mostly relies on functions and plugins that are already embarqued within Fiji. Tool 4, however, requires a separate plugin that should be installed before using the toolset:*
 1. Download [Zip_It.jar](https://github.com/fabricecordelieres/IJ-Plugin_Zip-It/releases/tag/v1.0).
 3. Drag-and-drop the .jar file to your ImageJ/Fiji toolbar.
 4. In the File saver window, press Ok.
