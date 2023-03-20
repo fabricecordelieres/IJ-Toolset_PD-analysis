@@ -103,12 +103,28 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 			- Tagged_Walls.png
 
 #### Tool 1: CZI to Zip Tool
+<p align=center>
+	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool1.jpg?raw=true" width="256">
+</p>
+
 	
 #### Tool 2: Single file Tool
+<p align=center>
+	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool2.jpg?raw=true" width="256">
+</p>
+
 
 #### Tool 3: Multiple file Tool
+<p align=center>
+	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool3.jpg?raw=true" width="256">
+</p>
+
 
 #### Tool 4: ZipIt & View
+<p align=center>
+	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool4.jpg?raw=true" width="256">
+</p>
+
 	
 ### Colab script
 The Colab script will take care of YYY.
