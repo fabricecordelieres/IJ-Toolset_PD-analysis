@@ -124,10 +124,6 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool2.jpg?raw=true" width="256">
 </p>
 
-<p align=center>
-	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool1.jpg?raw=true" width="256">
-</p>
-
 *This tool is aimed at performing the analysis of asingle image, that should already be opened.*
 
 <p align=center>
