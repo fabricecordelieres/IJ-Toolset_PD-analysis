@@ -124,7 +124,7 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/Toolbar_Tool2.jpg?raw=true" width="256">
 </p>
 
-*This tool is aimed at performing the analysis of asingle image, that should already be opened.*
+*This tool is aimed at performing the analysis of a single image, that should already be opened.*
 
 <p align=center>
 	<img src="https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/blob/main/images/GUI_Single_file_Tool.png?raw=true" width="512"></br>
@@ -157,6 +157,37 @@ The toolset will output many data. In order to keep everything sorted, a specifi
 		- Junction points, search radius (pixels): defaut 10
 		- Walls, search radius (pixels): defaut 10
 2. Press Ok. NB: in order to speed up the process, none of the files will be displayed.
+
+### How does it work ?
+The process takes place in several steps:
+
+#### Step 1 - Pre-process walls:
+1. The original walls image is duplicated twice, duplicates being named Ori_walls and Skeleton, respectively.
+2. A gamma transform is applied to the Skeleton image, in order to enhance low intensity walls.
+3. The Skeleton image is subjected to [CLAHE transform](https://imagej.net/plugins/clahe#:~:text=The%20plugin%20Enhance%20Local%20Contrast,Enhance%20Local%20Contrast%20(CLAHE).), in order to further enhance the local contrast of walls.
+4. Background is subtracted unsing the ImageJ Subtract Background function.
+5. A median filter is applied to locally homogeneize intensities.
+6. The resulting image is duplicated, named "Blur" and subjected to Gaussian blur: this step allow extracting low frequencies, allowing to estimate the general non uniformity of the background.
+7. The Skeleton image is divided by the Blur image. The result image is 32-bit to take into account non integer resulting values. This division allows normalizing the Skeleton intensities relative to uneven illumination estimate, therefore correcting for the default in illumination.
+8. The Blur image is closed.
+9. The Skeleton image is scaled down to 8-bit, thresholded using the Huang method, considering the white parts as background: in a way, we are trying to isolate the cells i.e. "the non-walls".
+10. The image is converted to a mask where the holes are filled, and a open operation is performed to both avoid having holes inside cells and start separating cells that may be linked by few pixels.
+11. The Skeleton image is inverted: the walls are now in white over a black background.
+12. The image is finally subjected to Skeletonization.
+   
+#### Step 2 - Find 3 points:
+
+#### Step 3 - Isolate walls:
+#### Step 4 - Isolate cells:
+#### Step 5 - Pre-process PDs:
+#### Step 6 - Isolate PDs:
+#### Step 7 - Get parents
+* PD relative to a single wall
+* Junction point relative to three walls
+* Walls relative to two adjacent cells
+Step 8 - Export data as JSON file
+
+
 
 ### Tool 3: Multiple file Tool
 <p align=center>
