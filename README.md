@@ -180,9 +180,15 @@ The process takes place in several steps:
 2. A specific erosion is performed, using a 6 pixels neighborhood condition: only pixels having 3 pixels are retained.
 3. In some cases, several close pixels might be kept: in order to have only one point per group, the Find Maxima function is used to create a map containing only one spot per group.
 4. A tagged map (i.e. map where each object appears with an intensity corresponding to its ID) is generated, named "Tagged_junction_points".
-5. A table is generated, containing for each three point (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
+5. A table named "Junction_points" is generated, containing for each three points (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
 
 #### Step 3 - Isolate walls:
+1. The "Junction_points" table is selected and the coordinates of individuals three points is stored.
+2. The Skeleton image is duplicated and named "Walls_Raw".
+3. A multiple point selection is created, made of points having as coordinated the coordinates of the three points. This selection is enlarged to take shape of multiple circles that are then cleared. As a result, the skeleton image see its network cut out into segments, by removing all the junction points between three segments.
+4. A tagged map (i.e. map where each object appears with an intensity corresponding to its ID) is generated, named "Tagged_Walls".
+5. A table named "Walls" is generated, containing for each all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
+
 #### Step 4 - Isolate cells:
 #### Step 5 - Pre-process PDs:
 #### Step 6 - Isolate PDs:
