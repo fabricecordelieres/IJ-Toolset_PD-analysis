@@ -176,6 +176,11 @@ The process takes place in several steps:
 12. The image is finally subjected to Skeletonization.
    
 #### Step 2 - Find 3 points:
+1. The Skeleton image is selected, duplicated and the duplicate named "3_points".
+2. A specific erosion is performed, using a 6 pixels neighborhood condition: only pixels having 3 pixels are retained.
+3. In some cases, several close pixels might be kept: in order to have only one point per group, the Find Maxima function is used to create a map containing only one spot per group.
+4. A tagged map (i.e. map where each object appears with an intensity corresponding to its ID) is generated, named "Tagged_junction_points".
+5. A table is generated, containing for each three point (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
 
 #### Step 3 - Isolate walls:
 #### Step 4 - Isolate cells:
