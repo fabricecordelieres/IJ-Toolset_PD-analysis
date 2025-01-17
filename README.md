@@ -18,7 +18,7 @@ The toolset allows segmenting all elements, extracting relational and basic morp
 Two images are provided for the reader to test the toolset (see [folder example_dataset](https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/tree/main/example_dataset)).
 A ROI is also provided. As detection might be erroneous at the periphery of the sample, the experimenter decided to clear (set to black) all pixels outside the provided region of interest.
 
-Samples were prepared, imaged and analyzed by Tatiana de Souza Moraes.
+Samples were prepared, imaged and analyzed by **Tatiana de Souza Moraes** (Laboratory of Membrane Biogenesis UMR 5200, CNRS- Université Bordeaux, INRA Bordeaux Aquitaine, Villenave d'Ornon FRANCE).
 
 ## How does it work ? - IJ Toolset -
 ### Data structure for output
