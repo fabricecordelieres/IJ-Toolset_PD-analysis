@@ -190,13 +190,51 @@ The process takes place in several steps:
 5. A table named "Walls" is generated, containing for each all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
 
 #### Step 4 - Isolate cells:
-1. The Tagged_walls image is selected, any ROI on it is removed? The image is duplicated and the duplicate named "Cells_Raw".
+1. The Tagged_walls image is selected, any ROI on it is removed. The image is duplicated and the duplicate named "Cells_Raw".
 2. The image is subjected to morphological closing: a maximum filter is applied, followed by minimum filter. NB: by default, this is not a pure closing operation as the max and min filters may be of different radius.
 3. A tagged map (i.e. map where each object appears with an intensity corresponding to its ID) is generated, named "Tagged_Cells".
-5. A table named "Cells" is generated, containing for each cell (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
+4. A table named "Cells" is generated, containing for each cell (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
 
 #### Step 5 - Pre-process PDs:
+1. The original image is selected, any ROI on it is removed. The channel corresponding to PDs is duplicated and the duplicate named "Ori_PDs". The image is duplicated a second time and the duplicate named "Detection_PDs". 
+2. Background is subtracted unsing the ImageJ Subtract Background function.
+3. The "Tagged_Walls" is selected and subjected to a [0, 0] range threshold (selection of anything but the walls). A ROI is generated from the thresolded area, then inverted. The resulting ROI therefore encompasses all pixels belonging to walls.
+4.
+5. A tagged map (i.e. map where each object appears with an intensity corresponding to its ID) is generated, named "Tagged_Cells".
+6. A table named "Cells" is generated, containing for each cell (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
+
+function preprocessPDs(ori, chPDs, subBkgd, enlargePDs){
+	run("Enlarge...", "enlarge="+enlargePDs+" pixel");
+	resetThreshold;
+	selectWindow("Detection_PDs");
+	run("Restore Selection");
+	
+	setBackgroundColor(0, 0, 0);
+	run("Clear Outside");
+	run("Grays");
+	Roi.setStrokeColor("Green");
+	run("Add Selection...");
+	run("Median...", "radius=1");
+	
+	//Normalize
+	getStatistics(area, mean, min, max, std, histogram);
+	run("32-bit");
+	run("Subtract...", "value="+mean);
+	run("Divide...", "value="+std);
+	
+	run("Enhance Contrast", "saturated=0.35");
+
 #### Step 6 - Isolate PDs:
+function isolatePDs(image, prominence, radMeasure){
+	selectWindow("Detection_PDs");	
+	run("Select None");
+	run("Find Maxima...", "prominence="+prominence+" output=[Single Points]");
+	
+	getTaggedMap(255, 0, "Infinity", "Tagged_PDs");
+	roiToTable(image, "PDs", true, radMeasure, false);
+	close("Detection*");
+}
+
 #### Step 7 - Get parents
 * PD relative to a single wall
 * Junction point relative to three walls
