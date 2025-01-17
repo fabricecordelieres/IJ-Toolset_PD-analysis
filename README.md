@@ -199,16 +199,17 @@ The process takes place in several steps:
 1. The original image is selected, any ROI on it is removed. The channel corresponding to PDs is duplicated and the duplicate named "Ori_PDs". The image is duplicated a second time and the duplicate named "Detection_PDs". 
 2. Background is subtracted unsing the ImageJ Subtract Background function.
 3. The "Tagged_Walls" is selected and subjected to a [0, 0] range threshold (selection of anything but the walls). A ROI is generated from the thresolded area, then inverted. The resulting ROI therefore encompasses all pixels belonging to walls.
-4. The RI is subjected to enlargement.
-5. A tagged map (i.e. map where each object appears with an intensity corresponding to its ID) is generated, named "Tagged_Cells".
-6. A table named "Cells" is generated, containing for each cell (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
+4. The ROI is subjected to enlargement. This steps allows widening all walls.
+5. The Detection_PDs image is activated and the enlarged walls ROI restored on it.
+6. All pixels outside of the wall ROI are set to black. Only PDs signal falling onto walls is therefore kept for further processing and analysis.
+7. The walls ROI is added to the image overlay after ists stroke color has been set to green.
+8. A median filtering of radius 1 pixel is applied, aiming at noise reduction.
+9. Basic statistics are extracted from the image, within the ROI (expecially, average/minimum/maximum intensities and standard deviation).
+10. Statistics are used to normalize the image, reduicing image-to-image variability impact on the detection parameters.
+11. A tagged map (i.e. map where each object appears with an intensity corresponding to its ID) is generated, named "Tagged_Cells".
+12. A table named "Cells" is generated, containing for each cell (ROI) all the parameters already described  in the [Data structure for output section](#how-does-it-work----ij-toolset--).
 
 function preprocessPDs(ori, chPDs, subBkgd, enlargePDs){
-	run("Enlarge...", "enlarge="+enlargePDs+" pixel");
-	resetThreshold;
-	selectWindow("Detection_PDs");
-	run("Restore Selection");
-	
 	setBackgroundColor(0, 0, 0);
 	run("Clear Outside");
 	run("Grays");
@@ -217,7 +218,7 @@ function preprocessPDs(ori, chPDs, subBkgd, enlargePDs){
 	run("Median...", "radius=1");
 	
 	//Normalize
-	getStatistics(area, mean, min, max, std, histogram);
+	getStatistics(area, , histogram);
 	run("32-bit");
 	run("Subtract...", "value="+mean);
 	run("Divide...", "value="+std);
