@@ -14,6 +14,12 @@ The user has confocal stacks presenting in one channel a labelling of cell walls
 
 The toolset allows segmenting all elements, extracting relational and basic morphometrical informations. The Colab script is a a basic tool to shape and visualize the extracted data.
 
+## Example dataset
+Two images are provided for the reader to test the toolset (see [folder example_dataset]([#how-does-it-work----ij-toolset--](https://github.com/fabricecordelieres/IJ-Toolset_PD-analysis/tree/main/example_dataset)).
+A ROI is also provided. As detection might be erroneous at the periphery of the sample, the experimenter decided to clear (set to black) all pixels outside the provided region of interest.
+
+Samples were prepared, imaged and analyzed by Tatiana de Souza Moraes.
+
 ## How does it work ? - IJ Toolset -
 ### Data structure for output
 The toolset will output many data. In order to keep everything sorted, a specific folder/subfolders structure is adopted. The datastructure is generated as the user is activating the different tools. For each of the following folders, a subfolder is created per input file. This data structure is hosted in a user-defined root folder.
